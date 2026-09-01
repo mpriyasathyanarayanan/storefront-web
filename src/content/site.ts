@@ -37,10 +37,9 @@ export const site = {
 
   contact: {
     // Replace these with your real details.
-    email: 'hello@example.com',
-    instagram: 'https://instagram.com/your_handle',
-    line: '', // e.g. 'https://line.me/ti/p/xxxxxxx' — leave '' to hide the LINE button
-    location: {
+    email: 'houseofkiraya@gmail.com',
+    instagram: 'https://instagram.com/houseofkiraya',
+    line: 'https://page.line.me/HouseOfKiraya',
       en: 'Ships within Japan',
       ja: '日本国内発送',
     },
