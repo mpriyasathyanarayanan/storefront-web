@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import { site } from '../content/site'
 import { useLang } from '../i18n'
 
 export function Contact() {
   const { t, pick } = useLang()
   const { email, instagram, line } = site.contact
+  const [showEmail, setShowEmail] = useState(false)
 
   return (
     <section className="section" id="contact">
@@ -16,9 +18,14 @@ export function Contact() {
 
         <div className="contact__links">
           {email && (
-            <a className="btn" href={`mailto:${email}`}>
+            <button
+              type="button"
+              className="btn"
+              aria-expanded={showEmail}
+              onClick={() => setShowEmail((v) => !v)}
+            >
               {t('contact_email')}
-            </a>
+            </button>
           )}
           {instagram && (
             <a
@@ -41,6 +48,14 @@ export function Contact() {
             </a>
           )}
         </div>
+
+        {email && showEmail && (
+          <p className="contact__email">
+            <a className="contact__email-value" href={`mailto:${email}`}>
+              {email}
+            </a>
+          </p>
+        )}
 
         <p className="contact__note">{t('contact_disclaimer')}</p>
       </div>

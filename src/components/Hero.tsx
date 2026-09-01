@@ -1,8 +1,8 @@
 import { site } from '../content/site'
 import { useLang } from '../i18n'
-import { productImage } from '../lib/asset'
+import { siteImage } from '../lib/asset'
 
-// Drop a file named `hero.jpg` into public/products/ to use a real
+// Drop a file named `hero.jpg` into public/site/ to use a real
 // photo here; until then a styled placeholder is shown.
 const HERO_IMAGE = 'hero.jpg'
 const HAS_HERO_IMAGE = false
@@ -35,7 +35,7 @@ export function Hero() {
           }
         >
           {HAS_HERO_IMAGE ? (
-            <img src={productImage(HERO_IMAGE)} alt={site.brand} />
+            <img src={siteImage(HERO_IMAGE)} alt={site.brand} />
           ) : (
             <span>
               {site.brand}
