@@ -5,7 +5,7 @@
    ------------------------------------------------------------------ */
 
 export const site = {
-  brand: 'Kiraya',
+  brand: 'House of Kiraya',
 
   hero: {
     // `emphasis` is rendered in italic garnet inside the headline.
@@ -37,9 +37,9 @@ export const site = {
 
   contact: {
     // Replace these with your real details.
-    email: 'hello@example.com',
-    instagram: 'https://instagram.com/your_handle',
-    line: '', // e.g. 'https://line.me/ti/p/xxxxxxx' — leave '' to hide the LINE button
+    email: 'houseofkiraya@gmail.com',
+    instagram: 'https://instagram.com/houseofkiraya',
+    line: 'https://page.line.me/HouseOfKiraya',
     location: {
       en: 'Ships within Japan',
       ja: '日本国内発送',

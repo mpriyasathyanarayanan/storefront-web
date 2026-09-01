@@ -2,12 +2,19 @@
    Product catalogue.
 
    HOW TO ADD A PIECE
-   1. Put its photo(s) in  public/products/  (e.g. kundan-set-01.jpg).
+   1. Put its photo(s) in the category subfolder under public/products/:
+        public/products/necklaces/   public/products/earrings/   public/products/rings/
+      e.g. public/products/necklaces/kundan-set-01.jpg
       Square images (1:1), ~1200x1200px, look best.
    2. Add an entry to the `products` array below.
-   3. `images` is a list of file names from public/products/.
+   3. `images` is a list of paths relative to public/products/, so include
+      the category folder: ['necklaces/kundan-set-01.jpg', ...].
+      The first image is the card cover.
       Leave it as [] to show a styled placeholder until the photo is ready.
    4. Keep `category` spelled exactly as one of the CATEGORIES values.
+
+   Non-product images (hero, About) live in public/site/ — see that folder's
+   README and the siteImage() helper in src/lib/asset.ts.
 
    Prices: use a string so you can write "¥28,000" or leave "" for
    "Price on request".
@@ -29,7 +36,6 @@ export type Product = {
 export const CATEGORIES: Bilingual[] = [
   { en: 'Necklaces', ja: 'ネックレス' },
   { en: 'Earrings', ja: 'イヤリング' },
-  { en: 'Bangles', ja: 'バングル' },
   { en: 'Rings', ja: 'リング' },
 ]
 
@@ -77,21 +83,6 @@ export const products: Product[] = [
     description: {
       en: 'A close-fitting choker with flat, uncut-style stones that catch the light softly rather than sparkle.',
       ja: '首元に沿うチョーカー。フラットなカットなし調の石が、きらめきよりもやわらかな光を返します。',
-    },
-  },
-  {
-    id: 'meenakari-bangles',
-    images: [],
-    price: '',
-    name: { en: 'Meenakari Bangle Pair', ja: 'ミーナカリ バングル（ペア）' },
-    category: { en: 'Bangles', ja: 'バングル' },
-    material: {
-      en: 'Lac core, gold-plated metal, hand-painted enamel',
-      ja: 'ラック芯、ゴールドプレート金属、手描きエナメル',
-    },
-    description: {
-      en: 'A pair of bangles finished with Meenakari enamel work — colour fired onto metal by hand, motif by motif.',
-      ja: 'ミーナカリのエナメル細工で仕上げたバングルのペア。文様を一つずつ手作業で焼き付けています。',
     },
   },
   {
